@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="js/config.js"></script>
+    <style>
+        body { font-family: Arial; }
+        .tab { overflow: hidden; border: 1px solid #ccc; background-color: #f1f1f1; }
+        .tab button { background-color: inherit; float: left; border: none; outline: none; cursor: pointer; padding: 14px 16px; }
+        .tab button:hover { background-color: #ddd; }
+        .tab button.active { background-color: #ccc; }
+        .tabcontent { display: none; padding: 6px 12px; border: 1px solid #ccc; border-top: none; }
+    </style>
+</head>
+<body>
+    <h1>Restaurant Management System</h1>
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'restaurants')">Restaurants</button>
+        <button class="tablinks" onclick="openTab(event, 'menu')">Menu</button>
+        <button class="tablinks" onclick="openTab(event, 'tables')">Tables</button>
+        <button class="tablinks" onclick="openTab(event, 'settings')">Settings</button>
+        <button style="float:right;" onclick="logout()">Logout</button>
+    </div>
+
+    <div id="restaurants" class="tabcontent">
+        <h2>Restaurants</h2>
+        <input type="text" id="restaurantName" placeholder="Restaurant name">
+        <button onclick="addRestaurant()">Add Restaurant</button>
+        <div id="restaurantsList"></div>
+    </div>
+
+    <div id="menu" class="tabcontent">
+        <h2>Menu</h2>
+        <select id="menuRestaurantSelect"></select>
+        <input type="text" id="categoryName" placeholder="Category name">
+        <button onclick="addCategory()">Add Category</button>
+        <div id="categoriesList"></div>
+    </div>
+
+    <div id="tables" class="tabcontent">
+        <h2>Tables</h2>
+        <!-- Will be added later -->
+    </div>
+
+    <div id="settings" class="tabcontent">
+        <h2>Settings</h2>
+        <!-- Will be added later -->
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
